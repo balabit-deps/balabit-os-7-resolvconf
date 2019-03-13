@@ -1,3 +1,20 @@
+resolvconf (1.79ubuntu10.18.04.2) bionic; urgency=medium
+
+  * Revert the previous SRU, which regressed DNS handling in certain
+    configurations.  LP: #1819625.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Wed, 13 Mar 2019 14:15:36 -0700
+
+resolvconf (1.79ubuntu10.18.04.1) bionic; urgency=medium
+
+  * Pull systemd-resolved conf from non-stub file; the stub file should
+    not be used unless all dns traffic goes to the local stub resolver.
+    Specifically, now that stub-resolv.conf includes edns0 option,
+    using the stub conf with non-local dns servers can break dns
+    resolution. (LP: #1817903)
+
+ -- Dan Streetman <ddstreet@canonical.com>  Wed, 27 Feb 2019 17:03:57 -0500
+
 resolvconf (1.79ubuntu10) bionic; urgency=medium
 
   * Fix race of not injecting resolved config into resolvconf on LXD
