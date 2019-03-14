@@ -4,4 +4,4 @@ ConditionFileIsExecutable=/sbin/resolvconf
 
 [Service]
 Type=oneshot
-ExecStart=+-/bin/sh -c 'cat /run/systemd/resolve/stub-resolv.conf | /sbin/resolvconf -a systemd-resolved'
+ExecStart=+-/bin/sh -c 'cat /run/systemd/resolve/stub-resolv.conf | grep -v edns0 | /sbin/resolvconf -a systemd-resolved'

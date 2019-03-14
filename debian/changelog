@@ -1,3 +1,11 @@
+resolvconf (1.79ubuntu10.18.04.3) bionic; urgency=medium
+
+  * d/resolvconf.resolvconf-pull-resolved.service
+    Hack out the 'edns0' option that systemd-resolved has
+    recently added to its stub-resolv.conf. (LP: #1817903)
+
+ -- Dan Streetman <ddstreet@canonical.com>  Thu, 14 Mar 2019 17:35:23 -0400
+
 resolvconf (1.79ubuntu10.18.04.2) bionic; urgency=medium
 
   * Revert the previous SRU, which regressed DNS handling in certain
